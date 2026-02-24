@@ -1,0 +1,181 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY WITH OOTY BACKGROUND */
+body {
+    font-family: Arial, sans-serif;
+    background:
+        linear-gradient(rgba(0,0,0,0.30), rgba(0,0,0,0.30)),
+        url("images/ooty-bg.jpg") no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+/* GENERAL SECTION */
+section {
+    padding: 80px 20px;
+}
+
+/* HERO SECTION */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 0 4px 25px rgba(0,0,0,0.9);
+}
+
+/* Main Title */
+.main-title {
+    font-size: 52px;
+    font-weight: bold;
+    background: linear-gradient(45deg, #ffd700, #ff8c00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: fadeIn 2s forwards;
+    opacity: 0;
+}
+
+/* Sub Title */
+.sub-title {
+    margin-top: 15px;
+    font-size: 22px;
+    color: #00ffff;
+    font-weight: bold;
+}
+
+/* College */
+.college {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #ffffff;
+    opacity: 0.9;
+}
+.hero h1 {
+    font-size: 48px;
+    animation: fadeIn 2s forwards;
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+.hero p {
+    margin-top: 10px;
+    font-size: 20px;
+    opacity: 0.9;
+}
+
+/* FILTER BUTTONS */
+.filter-buttons {
+    margin-bottom: 30px;
+}
+
+.filter-buttons button {
+    padding: 10px 22px;
+    margin: 6px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    background: white;
+    color: #1e3c72;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.filter-buttons button:hover {
+    background: #ffd700;
+}
+
+.filter-buttons button.active {
+    background: #ffd700;
+    color: black;
+}
+
+/* GALLERY GRID */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* GALLERY IMAGES */
+.gallery img {
+    width: 280px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: opacity 0.4s ease, transform 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* LIGHTBOX */
+#lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+#lightbox img {
+    max-width: 85%;
+    max-height: 85%;
+    border-radius: 10px;
+    transition: opacity 0.4s ease;
+}
+
+/* CLOSE BUTTON */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+/* NAV BUTTONS */
+.prev,
+.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 45px;
+    color: white;
+    cursor: pointer;
+}
+
+.prev { left: 30px; }
+.next { right: 30px; }
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .gallery img {
+        width: 90%;
+        height: 220px;
+    }
+}
